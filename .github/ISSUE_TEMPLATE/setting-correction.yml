@@ -1,0 +1,36 @@
+name: "🔧 Setting correction"
+description: A setting's value, path, or default looks wrong
+title: "[Fix] <camera> — <setting>"
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: "Help us keep every value verifiable against the official manual."
+  - type: input
+    id: camera
+    attributes:
+      label: Camera
+      placeholder: "Sony A7 V"
+    validations:
+      required: true
+  - type: input
+    id: setting
+    attributes:
+      label: Which setting?
+      placeholder: "RAW File Type"
+    validations:
+      required: true
+  - type: textarea
+    id: whats-wrong
+    attributes:
+      label: What's wrong, and what should it be?
+      placeholder: "The guide says X, but the manual says Y."
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Manual page / source
+      description: Page number or a link/screenshot of the relevant manual section.
+    validations:
+      required: true

@@ -1,0 +1,21 @@
+name: "🐞 App bug"
+description: Something in the web app is broken or misbehaving
+title: "[Bug] <short summary>"
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Browser / device
+      placeholder: "Safari on iPhone 15 / Chrome on macOS"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or console errors

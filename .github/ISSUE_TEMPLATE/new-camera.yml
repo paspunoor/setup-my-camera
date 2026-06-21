@@ -1,0 +1,39 @@
+name: "📷 New camera"
+description: Request or propose a new camera guide
+title: "[Camera] <Brand> <Model>"
+labels: ["new-camera"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Adding a camera is a single drop-in JSON file — see
+        [`src/content/cameras/README.md`](../../tree/main/src/content/cameras/README.md) for the
+        schema and a ready-to-use authoring prompt. PRs welcome! Use this issue to coordinate or
+        request a camera you don't have the manual for.
+  - type: input
+    id: model
+    attributes:
+      label: Camera (brand + exact model)
+      placeholder: "Fujifilm X-T5 / Canon EOS R5 / DJI Osmo Action 5"
+    validations:
+      required: true
+  - type: input
+    id: manual
+    attributes:
+      label: Link to the official manual
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Who is this guide for?
+      description: The use cases it should be tuned for.
+      placeholder: "Street + travel photographer who also shoots video"
+  - type: checkboxes
+    id: offer
+    attributes:
+      label: Are you planning to submit the JSON yourself?
+      options:
+        - label: "Yes — I'll open a PR with the camera file"
+        - label: "No — just requesting it"
