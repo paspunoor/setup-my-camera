@@ -1,0 +1,1209 @@
+{
+  "camera": {
+    "id": "gopro-hero13",
+    "brand": "GoPro",
+    "model": "HERO13 Black",
+    "name": "GoPro HERO13 Black"
+  },
+  "meta": {
+    "body": "GoPro HERO13 Black",
+    "model": "HERO13 Black",
+    "firmware": "User Manual · Rev B",
+    "helpGuide": "gopro.com/help",
+    "scope": "A field-ready setup for an action, travel and POV creator — biking, surfing, hiking, vlogging — who also shoots slow-mo and hyperlapses. Tune it once, then swipe between your saved custom presets.",
+    "updated": "Grounded in the official HERO13 Black user manual. Recommended values are tuned for run-and-gun adventure capture."
+  },
+  "stages": [
+    {
+      "id": "intro",
+      "label": "00",
+      "title": "How the HERO13 thinks",
+      "subtitle": "Read this once — it’s the whole mental model.",
+      "icon": "compass",
+      "kind": "intro",
+      "blurb": "A GoPro isn’t a menu camera — it’s a deck of presets. Learn the four moving parts and the rest of this guide clicks into place.",
+      "stats": [
+        {
+          "value": "5.3K",
+          "label": "60 FPS"
+        },
+        {
+          "value": "4K",
+          "label": "120 FPS"
+        },
+        {
+          "value": "2.7K",
+          "label": "240 FPS"
+        },
+        {
+          "value": "400",
+          "label": "FPS BURST"
+        },
+        {
+          "value": "27",
+          "label": "MP PHOTO"
+        },
+        {
+          "value": "6",
+          "label": "PRESETS"
+        }
+      ],
+      "blocks": [
+        {
+          "heading": "Presets, not dials",
+          "body": [
+            "The HERO13 has three capture modes — Video, Photo, and Time Lapse — and each holds a stack of presets (Standard, HDR, Burst Slo-Mo; SuperPhoto, Burst, Night; TimeWarp, Star Trails, Night Lapse, and more).",
+            "You swipe between presets on the rear touch screen and press the Shutter button to capture. Tapping a preset opens its Capture Settings and Protune.",
+            "• Swipe DOWN from the top = the Dashboard (quick toggles).",
+            "• Swipe LEFT = Preferences (the camera-wide system settings).",
+            "• Tap the preset name (or the pencil) = that preset’s Capture Settings + Protune."
+          ]
+        },
+        {
+          "heading": "Capture Settings vs Protune",
+          "body": [
+            "Capture Settings are the skeleton of a shot — Resolution, Frame Rate, Digital Lens, HyperSmooth. They decide the look and how smooth/immersive it is.",
+            "Protune is the manual layer — Shutter, EV Comp, White Balance, ISO limits, Color, Sharpness. It’s where you take control for grading or tricky light.",
+            "Key rule: Protune changes apply only to the preset you’re in. Tuning White Balance for your Cinematic preset doesn’t touch your POV preset."
+          ]
+        },
+        {
+          "heading": "Lenses and stabilization are the signature",
+          "body": [
+            "Digital Lenses reframe the world without changing glass: HyperView and SuperView are ultra-immersive POV; Wide is the do-everything default; Linear removes the fisheye; Linear + Horizon Lock keeps the world level; Narrow is the flattest.",
+            "HyperSmooth (Off / On / AutoBoost) plus Horizon Lock is what gives GoPro footage that gimbal-like glide. It crops slightly to buy stabilization buffer."
+          ]
+        },
+        {
+          "heading": "Cards, power, and heat",
+          "body": [
+            "Use a microSD rated V30 or better; step up to V90 for 5.3K, high frame rates, 10-bit, or High bit rate.",
+            "Run the Enduro battery for cold/long sessions. Shooting high resolution + high fps when it’s warm — especially while connected to the Quik app — heats the camera and shortens record time. Shorter clips and an external mount (not your hand) help it breathe.",
+            "The HB-series lens mods (Ultra Wide, Macro, Anamorphic) and magnetic ND filters are auto-detected when attached."
+          ]
+        },
+        {
+          "heading": "Custom presets are your memory slots",
+          "body": [
+            "Once you’ve dialed a look you like, save it as a named custom preset. That’s the GoPro version of a camera’s MR slots — the last six stages of this guide each build one (POV, Cinematic, Slo-Mo, Vlog, TimeWarp, Night) so a swipe gets you shooting in seconds."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "housekeeping",
+      "label": "01",
+      "title": "System Setup",
+      "subtitle": "Do this first — it’s set-and-forget",
+      "icon": "cards",
+      "kind": "settings",
+      "blurb": "The camera-wide settings that make the GoPro safe, fast, and ready. Most live under Preferences (swipe left).",
+      "groups": [
+        {
+          "id": "gp-hk-card",
+          "title": "Card, region & power",
+          "gate": {
+            "id": "gp-hk-card-gate",
+            "headline": "Open Preferences",
+            "detail": "Swipe left on the rear screen to reach the Preferences menu — none of this depends on which preset you’re in.",
+            "dials": [],
+            "note": "Battery in, a fast microSD seated."
+          },
+          "items": [
+            {
+              "id": "gp-hk-1",
+              "kind": "setting",
+              "name": "Format SD Card",
+              "path": [
+                "Preferences",
+                "Reset",
+                "Format SD Card"
+              ],
+              "value": "Format in-camera (use V30+)",
+              "why": "Erases the card and builds the file structure the camera expects, preventing dropped frames and corruption. Always format in-camera, not on a computer. Use a microSD rated V30 minimum; V90 for 5.3K, high frame rates, 10-bit, or High bit rate.",
+              "example": "Before a big ride you wipe the card in-camera so a half-full, PC-formatted card doesn’t stutter mid-clip at 5.3K60.",
+              "alt": "A UHS-I V30 card handles most modes; only step to V90 if you see \"SD Card Speed\" warnings or shoot the heaviest formats."
+            },
+            {
+              "id": "gp-hk-2",
+              "kind": "setting",
+              "name": "Regional Format",
+              "path": [
+                "Preferences",
+                "Regional",
+                "Regional Format"
+              ],
+              "value": "NTSC (60Hz) — US",
+              "why": "Sets the whole video system and anti-flicker frequency. NTSC (60Hz) unlocks 24/30/60/120/240 fps and is correct for the US; PAL (50Hz) gives 25/50/100/200 fps and avoids flicker under 50Hz mains lighting.",
+              "example": "Filming indoors under US lights, NTSC keeps the footage flicker-free and gives you true 24p and 240fps slow-mo.",
+              "alt": "Switch to PAL only if you deliver for 50Hz regions or shoot under 50Hz artificial light.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-hk-3",
+              "kind": "setting",
+              "name": "Date, Time & GPS",
+              "path": [
+                "Preferences",
+                "Regional / GPS"
+              ],
+              "value": "Auto-set via app; GPS On",
+              "why": "Pairing the Quik app sets the clock automatically. Turning GPS On stamps speed, altitude, distance, and location into your clips so you can add telemetry stickers and map your routes later.",
+              "example": "A mountain-bike descent gets a speed gauge and elevation overlay in the Quik app because GPS was logging the whole run.",
+              "alt": "Leave GPS Off only to squeeze a little extra battery on a static shoot."
+            },
+            {
+              "id": "gp-hk-4",
+              "kind": "setting",
+              "name": "Auto Power Off",
+              "path": [
+                "Preferences",
+                "General",
+                "Auto Power Off"
+              ],
+              "value": "5 Min",
+              "why": "How long the camera waits before shutting down to save battery. 5 minutes is a good balance; bump to 15 or 30 for long, intermittent shoots where you don’t want it sleeping between takes.",
+              "example": "Waiting for the perfect wave, 15 Min keeps the GoPro awake so it’s ready the instant the set rolls in.",
+              "alt": "Never disables it entirely — useful tethered to power, draining otherwise.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-hk-9",
+              "kind": "setting",
+              "name": "Bit Depth",
+              "path": [
+                "Preferences",
+                "Video",
+                "Bit Depth"
+              ],
+              "value": "10-Bit",
+              "why": "Chooses 8-bit or 10-bit color. 10-bit records over a billion colors for smoother skies and gradients and far more grading headroom. It applies to 5.3K and 4K; everything under 4K records 8-bit.",
+              "example": "A sunset clip in 10-bit holds a clean gradient you can push in the grade instead of banding into stripes.",
+              "alt": "8-bit if you want smaller files and never grade — but on the HERO13, 10-bit is nearly free quality."
+            },
+            {
+              "id": "gp-hk-10",
+              "kind": "setting",
+              "name": "Bit Rate",
+              "path": [
+                "Preferences",
+                "Video",
+                "Bit Rate"
+              ],
+              "value": "High (up to 120 Mbps)",
+              "why": "How much data per second the camera records. High packs in more detail and survives editing better; Standard makes smaller files. High needs a faster (V60/V90) card.",
+              "example": "Fast water and spray in a surf clip stay crisp on High instead of smearing into compression mush.",
+              "alt": "Standard to maximize record time and card space when you won’t grade."
+            }
+          ]
+        },
+        {
+          "id": "gp-hk-ctrl",
+          "title": "Controls, voice & the app",
+          "gate": {
+            "id": "gp-hk-ctrl-gate",
+            "headline": "Still in Preferences",
+            "detail": "Same menu — we’re setting how you trigger and connect to the camera.",
+            "dials": []
+          },
+          "items": [
+            {
+              "id": "gp-hk-5",
+              "kind": "setting",
+              "name": "QuikCapture",
+              "path": [
+                "Preferences",
+                "General",
+                "QuikCapture"
+              ],
+              "value": "On",
+              "why": "When the camera is OFF, a single press of the Shutter button powers it on and starts recording instantly — and it shuts down when you stop. It’s the fastest way to catch a moment and it saves battery between shots.",
+              "example": "A bear crosses the trail — one press from cold and you’re already recording, no menus.",
+              "alt": "Off if you keep bumping the shutter in a pack and starting accidental clips.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-hk-6",
+              "kind": "setting",
+              "name": "Default Preset",
+              "path": [
+                "Preferences",
+                "General",
+                "Default Preset"
+              ],
+              "value": "Your POV / Standard preset",
+              "why": "The preset the camera lands on when it powers up (including via QuikCapture). Set it to whatever you grab for most — your POV preset for an action trip, Vlog for a travel day.",
+              "example": "QuikCapture from cold starts straight into your 4K60 POV preset because you set it as default.",
+              "alt": "Point it at Standard Video if your shooting is too varied to predict."
+            },
+            {
+              "id": "gp-hk-7",
+              "kind": "setting",
+              "name": "Voice Control",
+              "path": [
+                "Preferences",
+                "Voice Control"
+              ],
+              "value": "On (+ Wake on Voice)",
+              "why": "Hands-free trigger words (\"GoPro, start recording\", \"GoPro, take a photo\", \"GoPro, that was sick\" to tag a highlight). Wake on Voice lets it power up from a low-power sleep on command.",
+              "example": "Both hands on the bars, you say \"GoPro, HiLight\" to tag the jump you just sent, so it’s easy to find in editing.",
+              "alt": "Off in noisy crowds or if false triggers waste battery."
+            },
+            {
+              "id": "gp-hk-8",
+              "kind": "setting",
+              "name": "Connect the Quik app",
+              "path": [
+                "Preferences",
+                "Connections",
+                "Connect Device"
+              ],
+              "value": "Pair the GoPro Quik app",
+              "why": "Pairs your phone for wireless offload, a live remote viewfinder, firmware updates, and — crucially — reframing and grading your footage. This is half of the GoPro workflow.",
+              "example": "Back at camp you offload the day’s clips over Wi-Fi and reframe a vertical cut for socials, all in the app.",
+              "alt": "A GoPro remote (sold separately) controls the camera using far less power than the app for long shoots."
+            },
+            {
+              "id": "gp-hk-11",
+              "kind": "setting",
+              "name": "Beeps, LEDs & Orientation",
+              "path": [
+                "Preferences",
+                "General / Displays"
+              ],
+              "value": "Beeps Low · Orientation Locked · Grid On",
+              "why": "Quality-of-life: drop the beep volume so you’re not announcing every clip, lock orientation so a head-mount doesn’t flip your footage, and turn on the grid for level horizons.",
+              "example": "A helmet-mounted shot stays right-side-up all session because Orientation is Locked when you hit record.",
+              "alt": "Turn LEDs off entirely for night shoots where the red blinkers reflect in the lens or windows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "video-defaults",
+      "label": "02",
+      "title": "Video — Capture Settings",
+      "subtitle": "Your everyday Standard Video preset",
+      "icon": "movie",
+      "kind": "settings",
+      "blurb": "The skeleton of your default video look. Set these in the Standard Video preset; scenario presets later refine them.",
+      "groups": [
+        {
+          "id": "gp-vd-look",
+          "title": "Resolution, lens & frame rate",
+          "gate": {
+            "id": "gp-vd-look-gate",
+            "headline": "Open the Standard Video preset",
+            "detail": "Swipe to Video mode, make sure the Standard preset is selected, then tap it to open its Capture Settings.",
+            "dials": [],
+            "saveTo": "Video · Standard"
+          },
+          "items": [
+            {
+              "id": "gp-vd-1",
+              "kind": "setting",
+              "name": "Video Quality",
+              "path": [
+                "Capture Settings",
+                "Quality"
+              ],
+              "value": "Standard (HDR for harsh light)",
+              "why": "Three recording options: Standard is the clean all-rounder; HDR pulls detail out of bright skies and deep shadows in high-contrast scenes; HLG HDR + Log is the flat, gradeable option for serious editing. Pick Standard as your baseline.",
+              "example": "A trail that ducks from bright clearing into dark forest holds detail in both on HDR where Standard would clip the sky.",
+              "alt": "HLG HDR + Log when you intend to color grade with the GoPro LUT (see the Cinematic preset).",
+              "isDefault": true
+            },
+            {
+              "id": "gp-vd-2",
+              "kind": "setting",
+              "name": "Resolution (RES)",
+              "path": [
+                "Capture Settings",
+                "RES"
+              ],
+              "value": "4K (5.3K for max detail)",
+              "why": "Higher resolution = more detail and more room to reframe/zoom in post. 5.3K is the sharpest and lets you grab 24.7MP stills from video; 4K is lighter, runs cooler, and reaches higher frame rates; 2.7K/1080 are for the fastest slow-mo.",
+              "example": "Shooting 5.3K of a skate line lets you punch in to a tight 1080 crop in the edit and still look sharp.",
+              "alt": "5.3K for hero shots and reframing; drop to 4K for longer record times and less heat."
+            },
+            {
+              "id": "gp-vd-3",
+              "kind": "setting",
+              "name": "Frame Rate (fps)",
+              "path": [
+                "Capture Settings",
+                "FPS"
+              ],
+              "value": "30 (60 for action)",
+              "why": "How many frames per second. 24 is cinematic; 30 is the standard smooth look; 60 is fluid and gives you 2× slow-mo headroom; 120/240 are dedicated slow-motion. Higher fps needs more light.",
+              "example": "Filming a dog sprinting, 60fps lets you slow the gallop to a smooth half-speed in the edit while still cutting at normal speed.",
+              "alt": "24fps for a filmic feel; 60fps when you want the option to slow it down later."
+            },
+            {
+              "id": "gp-vd-4",
+              "kind": "setting",
+              "name": "Digital Lens",
+              "path": [
+                "Capture Settings",
+                "Lens"
+              ],
+              "value": "Wide (Linear + Horizon Lock for level)",
+              "why": "Reframes the field of view in-camera. SuperView/HyperView are the most immersive, action-POV look; Wide is the versatile GoPro default; Linear removes the fisheye bulge for a natural look; Linear + Horizon Lock also keeps the world level through any rotation; Narrow is the flattest, most \"normal-camera\" view.",
+              "example": "A handlebar shot on Linear + Horizon Lock stays dead level even as you lean through berms, looking pro instead of seasick.",
+              "alt": "SuperView for chest/helmet POV immersion; Linear + Horizon Lock for clips you want to look cinematic and steady."
+            },
+            {
+              "id": "gp-vd-5",
+              "kind": "setting",
+              "name": "Aspect Ratio",
+              "path": [
+                "Capture Settings",
+                "Aspect Ratio"
+              ],
+              "value": "16:9 (8:7 to reframe later)",
+              "why": "The shape of the frame. 16:9 is standard widescreen. The HERO13’s tall 8:7 full-sensor option captures the most image so you can crop a vertical (9:16) and a horizontal (16:9) from one take in the Quik app.",
+              "example": "One 8:7 clip of a waterfall gives you both a wide YouTube edit and a vertical Reels cut without reshooting.",
+              "alt": "16:9 if you only deliver widescreen and want the simplest workflow.",
+              "isDefault": true
+            }
+          ]
+        },
+        {
+          "id": "gp-vd-stab",
+          "title": "Stabilization & safety net",
+          "gate": {
+            "id": "gp-vd-stab-gate",
+            "headline": "Stay in the Standard Video preset",
+            "detail": "Same Capture Settings screen — scroll to the stabilization options.",
+            "dials": []
+          },
+          "items": [
+            {
+              "id": "gp-vd-6",
+              "kind": "setting",
+              "name": "HyperSmooth",
+              "path": [
+                "Capture Settings",
+                "HyperSmooth"
+              ],
+              "value": "On (AutoBoost for rough rides)",
+              "why": "GoPro’s in-camera stabilization. On gives high stabilization with minimal crop; AutoBoost combines maximum stabilization with the widest possible view, varying the crop as needed; Off records raw with no crop. It buffers footage by cropping slightly while recording.",
+              "example": "A rocky descent looks gimbal-smooth on AutoBoost, where Off would be an unwatchable shake.",
+              "alt": "Off only on a tripod/gimbal where you don’t want any crop; pair stabilization with Horizon Lock for the steadiest result."
+            },
+            {
+              "id": "gp-vd-7",
+              "kind": "setting",
+              "name": "Horizon Lock",
+              "path": [
+                "Capture Settings",
+                "Lens"
+              ],
+              "value": "On (via Linear + Horizon Lock lens)",
+              "why": "Keeps the horizon level (and locked through full 360° rotations) for a cinematic, professionally-shot look. It’s enabled by choosing a Horizon Lock/Leveling digital lens and is available at most resolutions/frame rates (Leveling kicks in at the top frame rate of each resolution).",
+              "example": "Mounted sideways on a surfboard rail, the footage still reads level instead of tilted, so viewers aren’t disoriented.",
+              "alt": "Skip it for deliberately dynamic POV where the tilt is part of the energy."
+            },
+            {
+              "id": "gp-vd-8",
+              "kind": "setting",
+              "name": "HindSight",
+              "path": [
+                "Capture Settings",
+                "HindSight"
+              ],
+              "value": "Off (On · 15 sec for unpredictable moments)",
+              "why": "When On, the camera continuously buffers the last 15 or 30 seconds, so when you press record it saves what happened BEFORE you pressed. Perfect for moments you can’t predict. It uses battery continuously while armed.",
+              "example": "A grom finally lands the trick — you press record a beat late but HindSight already captured the launch and landing.",
+              "alt": "Leave Off to save battery; arm it (15 sec) only when you’re waiting on a one-shot moment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "video-protune",
+      "label": "03",
+      "title": "Video — Protune",
+      "subtitle": "The manual control layer",
+      "icon": "dial",
+      "kind": "settings",
+      "blurb": "Scroll down in any preset’s settings to reach Protune. These are per-preset — tune them on your everyday Video preset; remember scenario presets keep their own copies.",
+      "groups": [
+        {
+          "id": "gp-vp-exp",
+          "title": "Exposure",
+          "gate": {
+            "id": "gp-vp-exp-gate",
+            "headline": "Scroll to Protune",
+            "detail": "In the Standard Video preset’s settings, scroll down past Capture Settings into the Protune section.",
+            "dials": []
+          },
+          "items": [
+            {
+              "id": "gp-vp-1",
+              "kind": "setting",
+              "name": "Shutter",
+              "path": [
+                "Protune",
+                "Shutter"
+              ],
+              "value": "Auto (manual for cinematic blur)",
+              "why": "Determines how long the shutter stays open (Video/Photo only). Auto adapts to the scene. For a cinematic, natural motion blur, set it manually to roughly 1 ÷ (2 × frame rate) — e.g. 1/60 at 30fps, 1/48 at 24fps. A fixed shutter usually wants an ND filter outdoors.",
+              "example": "A 24fps clip set to 1/48 has smooth, filmic motion blur instead of the crisp, slightly stuttery look of Auto in bright sun.",
+              "alt": "Auto for run-and-gun action where you can’t manage NDs; manual + ND for a deliberate cinematic look.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-vp-2",
+              "kind": "setting",
+              "name": "EV Comp",
+              "path": [
+                "Protune",
+                "EV Comp"
+              ],
+              "value": "0 (−0.5 to protect highlights)",
+              "why": "Exposure Value Compensation brightens or darkens the whole image (−2.0 to +2.0). Pulling it down slightly protects bright skies and snow/water highlights from blowing out. Only available for Video when Shutter is on Auto.",
+              "example": "On a bright snow run, −0.5 keeps the snow textured instead of a clipped white sheet.",
+              "alt": "+0.5 for dark forest or backlit subjects you want to lift.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-vp-3",
+              "kind": "setting",
+              "name": "White Balance",
+              "path": [
+                "Protune",
+                "White Balance"
+              ],
+              "value": "Auto (Native to grade)",
+              "why": "Sets color temperature: Auto, fixed values from 2300K to 6500K, or Native. Lower numbers warm the image, higher cool it. Native records a minimally color-corrected file that preserves the most data for grading.",
+              "example": "Locking 5500K for a beach session keeps every clip the same color so they intercut cleanly, instead of Auto drifting shot to shot.",
+              "alt": "A fixed Kelvin (or Native) whenever you grade or need consistent color; Auto for unpredictable mixed light.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-vp-4",
+              "kind": "setting",
+              "name": "ISO Max",
+              "path": [
+                "Protune",
+                "ISO Maximum"
+              ],
+              "value": "1600",
+              "why": "Caps how high the camera can push sensitivity in low light. A lower ceiling keeps footage clean; a higher one keeps the image bright in the dark at the cost of grain. ISO behaves relative to your Shutter setting.",
+              "example": "Capping ISO Max at 1600 keeps a dusk ride usable instead of letting Auto climb to a noisy mess.",
+              "alt": "Raise to 3200/6400 for genuinely dark scenes where brightness beats noise."
+            },
+            {
+              "id": "gp-vp-5",
+              "kind": "setting",
+              "name": "ISO Min",
+              "path": [
+                "Protune",
+                "ISO Minimum"
+              ],
+              "value": "100",
+              "why": "The floor for sensitivity — keep it at the base 100 for the cleanest possible image in good light. Setting Min and Max to the same value locks ISO entirely.",
+              "example": "In bright daylight, ISO Min 100 gives the cleanest, most detailed footage with no unnecessary gain.",
+              "alt": "Lock Min = Max for a fixed ISO when you want zero exposure shifts across a clip.",
+              "isDefault": true
+            }
+          ]
+        },
+        {
+          "id": "gp-vp-look",
+          "title": "Color, detail & audio",
+          "gate": {
+            "id": "gp-vp-look-gate",
+            "headline": "Stay in Protune",
+            "detail": "Continue scrolling through the Protune options.",
+            "dials": []
+          },
+          "items": [
+            {
+              "id": "gp-vp-6",
+              "kind": "setting",
+              "name": "Color",
+              "path": [
+                "Protune",
+                "Color"
+              ],
+              "value": "Natural (GP-Log to grade)",
+              "why": "The color profile baked into the clip. GoPro is the punchy, ready-to-post look; Natural is flatter and more true-to-life with room to tweak; the flat GP-Log profile (via the HLG HDR + Log quality option) preserves maximum dynamic range for full grading.",
+              "example": "A travel montage on Natural intercuts cleanly and takes a grade well, where the default GoPro look can be over-saturated.",
+              "alt": "GoPro color for instant social posts; GP-Log when you’ll grade with the GoPro LUT."
+            },
+            {
+              "id": "gp-vp-7",
+              "kind": "setting",
+              "name": "Sharpness",
+              "path": [
+                "Protune",
+                "Sharpness"
+              ],
+              "value": "Medium (Low if you grade)",
+              "why": "How much the camera sharpens detail in-camera: High, Medium (default), or Low. In-camera sharpening can’t be undone, so if you plan to sharpen in editing, shoot Low to keep it natural.",
+              "example": "For a graded edit you shoot Low and add sharpening to taste in post, avoiding the crunchy over-sharpened GoPro look.",
+              "alt": "High for straight-out-of-camera clips you won’t edit and want to look crisp immediately.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-vp-8",
+              "kind": "setting",
+              "name": "Wind & RAW Audio",
+              "path": [
+                "Protune",
+                "Audio"
+              ],
+              "value": "Wind Auto · RAW Audio Off",
+              "why": "Wind reduction cuts the roar of air over the mics (Auto detects it). RAW Audio saves a separate uncompressed .wav alongside the clip (Low/Med/High processing) for serious audio work or replacing the track.",
+              "example": "A windy ridge interview stays intelligible because Wind is filtering the gusts in real time.",
+              "alt": "Turn RAW Audio on (Med) when you’re capturing music or want to mix the original sound in post.",
+              "isDefault": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo",
+      "label": "04",
+      "title": "Photo Setup",
+      "subtitle": "Stills that punch above 27MP",
+      "icon": "still",
+      "kind": "settings",
+      "blurb": "GoPro stills are quietly excellent. Set up your default Photo preset here.",
+      "groups": [
+        {
+          "id": "gp-ph",
+          "title": "Output, lens & control",
+          "gate": {
+            "id": "gp-ph-gate",
+            "headline": "Open the Photo preset",
+            "detail": "Swipe to Photo mode and select the SuperPhoto preset, then tap to open its settings.",
+            "dials": [],
+            "saveTo": "Photo · SuperPhoto"
+          },
+          "items": [
+            {
+              "id": "gp-ph-1",
+              "kind": "setting",
+              "name": "Output",
+              "path": [
+                "Capture Settings",
+                "Output"
+              ],
+              "value": "SuperPhoto (RAW to edit)",
+              "why": "How the 27MP photo is processed. SuperPhoto auto-applies HDR/tone-mapping/noise reduction for the best JPEG with zero effort; HDR forces high-dynamic-range; RAW saves a .gpr alongside the JPEG for full editing control; Standard is a plain unprocessed JPEG.",
+              "example": "A harsh midday canyon shot comes back balanced on SuperPhoto, where a plain JPEG would clip the sky.",
+              "alt": "Shoot RAW when you’ll edit in Lightroom; SuperPhoto when you want the best photo with no work.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-ph-2",
+              "kind": "setting",
+              "name": "Lens",
+              "path": [
+                "Capture Settings",
+                "Lens"
+              ],
+              "value": "Wide (Linear for natural)",
+              "why": "Photo digital lenses: Wide for the classic expansive GoPro photo, Linear to remove the fisheye for a natural-looking shot, Narrow for the flattest perspective. Max FOV captures the most scene.",
+              "example": "A group selfie on Wide fits everyone in; switch to Linear for a landscape where straight horizons matter.",
+              "alt": "Linear for any photo where you don’t want the GoPro bulge — architecture, portraits, landscapes.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-ph-3",
+              "kind": "setting",
+              "name": "Photo Shutter",
+              "path": [
+                "Protune",
+                "Shutter"
+              ],
+              "value": "Auto (long for night)",
+              "why": "Controls exposure time for stills. Auto handles daylight. For night and light-trail shots, set a long manual shutter (up to 30s) — and mount the camera on a tripod or solid surface so it stays still.",
+              "example": "A 30-second shutter on a tripod turns car headlights into glowing ribbons across a night street.",
+              "alt": "Auto for everyday photos; manual long exposures for night, stars, and light painting.",
+              "isDefault": true
+            },
+            {
+              "id": "gp-ph-4",
+              "kind": "setting",
+              "name": "Photo Protune",
+              "path": [
+                "Protune",
+                "WB · ISO · Sharpness · Color"
+              ],
+              "value": "WB Auto · ISO Max 800 · Sharpness Medium",
+              "why": "The same Protune controls as video apply to photos per-preset. A lower ISO Max (≈800) keeps stills clean; Natural color and Medium/Low sharpness give the most editable file.",
+              "example": "A dim cave shot at ISO Max 800 stays clean enough to recover in editing instead of turning to grain.",
+              "alt": "Raise ISO Max and shoot RAW for handheld low-light stills you’ll denoise in post."
+            },
+            {
+              "id": "gp-ph-5",
+              "kind": "setting",
+              "name": "Timer & Burst",
+              "path": [
+                "Capture Settings",
+                "Timer / Burst"
+              ],
+              "value": "Timer 3s for selfies",
+              "why": "A 3 or 10-second self-timer lets you get into the frame; Burst fires up to 30 photos in a second to nail peak action and pick the best frame.",
+              "example": "Set the 10s timer, prop the GoPro on a rock, and run into your own summit group shot.",
+              "alt": "Use Burst (in the Burst preset) for a jump or splash where one frame is the keeper."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pov",
+      "label": "05",
+      "title": "POV Action",
+      "subtitle": "Biking · skiing · surf · helmet/chest mount",
+      "icon": "mountain",
+      "kind": "scenario",
+      "blurb": "You’re strapped in and moving — this preset is built to just work when you can’t touch the camera.",
+      "scenario": {
+        "slot": "POV",
+        "storage": "preset",
+        "tagline": "Maximum immersion and rock-solid stabilization for fast, unpredictable action."
+      },
+      "groups": [
+        {
+          "id": "pov-grp",
+          "title": "POV Action preset",
+          "gate": {
+            "id": "pov-gate",
+            "headline": "Build the POV Action preset",
+            "detail": "Start from a preset close to this (or Create Preset from scratch), set the values below, then save it with a name at the end.",
+            "dials": [],
+            "saveTo": "POV"
+          },
+          "items": [
+            {
+              "id": "pov-1",
+              "kind": "setting",
+              "name": "Quality",
+              "value": "Standard",
+              "why": "Clean, reliable, runs cool — the right base for long action runs where HDR/Log add heat and complexity you don’t need.",
+              "example": "A 40-minute downhill run records start to finish without overheating on Standard.",
+              "alt": "HDR if the light swings from bright sky to dark trees constantly.",
+              "isDefault": true
+            },
+            {
+              "id": "pov-2",
+              "kind": "setting",
+              "name": "Resolution / FPS",
+              "value": "4K · 60fps",
+              "why": "4K60 is the action sweet spot: sharp, smooth, runs cooler than 5.3K, and gives you 2× slow-mo room for the big moments.",
+              "example": "A jump filmed at 4K60 plays back butter-smooth and slows to a clean half-speed for the replay.",
+              "alt": "5.3K30 if you want maximum detail and reframing over slow-mo headroom."
+            },
+            {
+              "id": "pov-3",
+              "kind": "setting",
+              "name": "Digital Lens",
+              "value": "SuperView (or Wide)",
+              "why": "SuperView is the tall, immersive, \"you are there\" POV look that fills the frame with the action. Wide is the slightly tamer everyday alternative.",
+              "example": "A chest-mounted MTB run in SuperView puts the viewer right over the bars.",
+              "alt": "Wide for less distortion; Linear + Horizon Lock if you want a level, cinematic action look."
+            },
+            {
+              "id": "pov-4",
+              "kind": "setting",
+              "name": "HyperSmooth",
+              "value": "AutoBoost",
+              "why": "Maximum stabilization with the widest view it can keep — exactly what rough, high-vibration action needs, automatically adapting the crop.",
+              "example": "A rock garden that would be unwatchable comes back gimbal-smooth on AutoBoost.",
+              "alt": "On (less crop) for smoother terrain where you want more field of view."
+            },
+            {
+              "id": "pov-5",
+              "kind": "setting",
+              "name": "Protune",
+              "value": "ISO Max 1600 · WB Auto · Shutter Auto",
+              "why": "Keep exposure automatic so the camera rides changing light through sun and shadow; cap ISO so dark sections don’t turn to noise.",
+              "example": "Riding from open trail into tree cover, Auto shutter + WB keep the exposure tracking while ISO Max 1600 holds the noise down.",
+              "alt": "Lock WB to a fixed Kelvin if you’ll grade the footage together."
+            },
+            {
+              "id": "pov-save",
+              "kind": "save",
+              "name": "Save as a custom preset: \"POV\"",
+              "value": "Settings → Save as Preset → name it POV",
+              "why": "Saves this whole stack as a named preset in Video mode so a single swipe arms your action rig — set it as your Default Preset for QuikCapture-from-cold."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cine",
+      "label": "06",
+      "title": "Cinematic",
+      "subtitle": "Travel b-roll · graded edits · the filmic look",
+      "icon": "movie",
+      "kind": "scenario",
+      "blurb": "This is the deliberate, tripod-or-careful-handheld preset for footage you’ll color in post.",
+      "scenario": {
+        "slot": "Cine",
+        "storage": "preset",
+        "tagline": "Flat, gradeable footage with cinematic motion and a level horizon."
+      },
+      "groups": [
+        {
+          "id": "cine-grp",
+          "title": "Cinematic preset",
+          "gate": {
+            "id": "cine-gate",
+            "headline": "Build the Cinematic preset",
+            "detail": "Start from a preset close to this (or Create Preset from scratch), set the values below, then save it with a name at the end.",
+            "dials": [],
+            "saveTo": "Cine"
+          },
+          "items": [
+            {
+              "id": "cine-1",
+              "kind": "setting",
+              "name": "Quality",
+              "value": "HLG HDR + Log",
+              "why": "The flat GP-Log profile preserves the most dynamic range and is built to be graded with the GoPro LUT — the foundation of the cinematic look.",
+              "example": "A high-contrast sunrise holds both the sky and the foreground, then grades to a rich film look with the LUT.",
+              "alt": "Standard + Natural color if you want a near-finished look without grading."
+            },
+            {
+              "id": "cine-2",
+              "kind": "setting",
+              "name": "Resolution / FPS",
+              "value": "5.3K · 24fps",
+              "why": "5.3K is maximum detail and reframing latitude; 24fps is the cinema frame rate that gives motion its filmic cadence.",
+              "example": "A slow push past a temple at 5.3K24 looks like a film still in motion and crops cleanly to any aspect.",
+              "alt": "4K24 to run cooler and lighter while keeping the 24p cadence."
+            },
+            {
+              "id": "cine-3",
+              "kind": "setting",
+              "name": "Digital Lens",
+              "value": "Linear + Horizon Lock",
+              "why": "Removes the GoPro fisheye for a natural, lens-like perspective and keeps the horizon dead level — the two things that most separate \"cinematic\" from \"action-cam\".",
+              "example": "A handheld walk through a market stays level and undistorted, reading like a gimbal shot.",
+              "alt": "Narrow for the flattest, most telephoto-like compression."
+            },
+            {
+              "id": "cine-4",
+              "kind": "setting",
+              "name": "Shutter",
+              "value": "Manual 1/48 (+ ND filter)",
+              "why": "A fixed 1/48 at 24fps gives natural cinematic motion blur. In daylight you’ll need a magnetic ND filter to drop the light so you can hold that slow shutter.",
+              "example": "With an ND8 on, 1/48 renders silky motion blur on passing traffic instead of crisp stutter.",
+              "alt": "Auto shutter if you don’t have NDs and can accept a crisper look."
+            },
+            {
+              "id": "cine-5",
+              "kind": "setting",
+              "name": "Protune",
+              "value": "Color GP-Log · ISO Max 400 · Sharpness Low · WB Native · 10-bit",
+              "why": "Lock everything down for grading: Log color, a low ISO ceiling for clean files, low in-camera sharpening, neutral Native WB, and 10-bit depth for smooth gradients.",
+              "example": "These settings hand your editor a clean, flat 10-bit file that grades beautifully without falling apart.",
+              "alt": "Bump ISO Max for low light, accepting more grain in the graded result."
+            },
+            {
+              "id": "cine-save",
+              "kind": "save",
+              "name": "Save as a custom preset: \"Cine\"",
+              "value": "Settings → Save as Preset → name it Cine",
+              "why": "Stores the full cinematic recipe — Log, 5.3K24, Linear + Horizon Lock, manual shutter — so you’re one swipe from filmic b-roll."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slomo",
+      "label": "07",
+      "title": "Slow-Mo",
+      "subtitle": "Splashes · tricks · dramatic replays",
+      "icon": "slowmo",
+      "kind": "scenario",
+      "blurb": "Slow-mo eats light and resolution — feed it bright scenes and frame a little wider than the final shot.",
+      "scenario": {
+        "slot": "Slo-Mo",
+        "storage": "preset",
+        "tagline": "High frame rates to stretch a fast moment into smooth slow motion."
+      },
+      "groups": [
+        {
+          "id": "slomo-grp",
+          "title": "Slow-Mo preset",
+          "gate": {
+            "id": "slomo-gate",
+            "headline": "Build the Slow-Mo preset",
+            "detail": "Start from a preset close to this (or Create Preset from scratch), set the values below, then save it with a name at the end.",
+            "dials": [],
+            "saveTo": "Slo-Mo"
+          },
+          "items": [
+            {
+              "id": "slomo-1",
+              "kind": "setting",
+              "name": "Resolution / FPS",
+              "value": "2.7K · 240fps",
+              "why": "2.7K240 conforms to 8× slow motion at 30fps while staying sharp. 240fps is the highest standard slow-mo and needs plenty of light.",
+              "example": "A skateboard splash at 2.7K240 stretches a half-second into smooth, detailed slow motion.",
+              "alt": "1080p240 for a lighter file, or 4K120 for higher resolution at 4× slow-mo."
+            },
+            {
+              "id": "slomo-2",
+              "kind": "setting",
+              "name": "Digital Lens",
+              "value": "Wide",
+              "why": "A wide lens gives the slow-mo room and the immersive GoPro feel; high frame rates limit some lens choices, and the camera will adjust the lens automatically if needed.",
+              "example": "A wide 240fps shot of a wave breaking over the lens looks huge and immersive in slow motion.",
+              "alt": "Linear if the fisheye distortion is distracting for the subject."
+            },
+            {
+              "id": "slomo-3",
+              "kind": "setting",
+              "name": "HyperSmooth",
+              "value": "On",
+              "why": "High frame rates already reduce the look of shake, but On keeps handheld slow-mo steady without the heavier AutoBoost crop.",
+              "example": "A handheld 240fps clip of a dog shaking off water stays steady enough to feel intentional.",
+              "alt": "Off on a tripod/gimbal to keep the full frame."
+            },
+            {
+              "id": "slomo-4",
+              "kind": "setting",
+              "name": "Burst Slo-Mo",
+              "path": [
+                "Capture Settings",
+                "Burst Slo-Mo"
+              ],
+              "value": "720p 400fps (13×) when you need extreme",
+              "why": "A dedicated mode that captures short clips at up to 400fps for 13× slow motion (720p/400, 900p/360 at 12×, or 5.3K/120 at 4×), with a maximum duration per burst.",
+              "example": "A balloon popping at 400fps reveals the rubber peeling away frame by frame.",
+              "alt": "Stick to standard 240fps for longer clips and higher resolution."
+            },
+            {
+              "id": "slomo-save",
+              "kind": "save",
+              "name": "Save as a custom preset: \"Slo-Mo\"",
+              "value": "Settings → Save as Preset → name it Slo-Mo",
+              "why": "Saves the high-frame-rate recipe so the decisive splash or trick is one swipe away — no fumbling with frame rates mid-session."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vlog",
+      "label": "08",
+      "title": "Vlog / Selfie",
+      "subtitle": "Talking to camera · travel days · front screen",
+      "icon": "people",
+      "kind": "scenario",
+      "blurb": "The front screen and a natural lens make framing yourself easy; this preset keeps you sharp and audible.",
+      "scenario": {
+        "slot": "Vlog",
+        "storage": "preset",
+        "tagline": "Flattering, steady, well-mic’d footage of yourself on the move."
+      },
+      "groups": [
+        {
+          "id": "vlog-grp",
+          "title": "Vlog / Selfie preset",
+          "gate": {
+            "id": "vlog-gate",
+            "headline": "Build the Vlog / Selfie preset",
+            "detail": "Start from a preset close to this (or Create Preset from scratch), set the values below, then save it with a name at the end.",
+            "dials": [],
+            "saveTo": "Vlog"
+          },
+          "items": [
+            {
+              "id": "vlog-1",
+              "kind": "setting",
+              "name": "Resolution / FPS",
+              "value": "4K · 30fps",
+              "why": "4K30 is the vlogging standard: detailed, smooth, plenty of light sensitivity, and easy to edit. It crops cleanly to vertical for socials.",
+              "example": "A walk-and-talk through a market at 4K30 looks crisp and cuts straight to a vertical Reel.",
+              "alt": "4K60 if you want slow-mo room or smoother motion for active vlogs."
+            },
+            {
+              "id": "vlog-2",
+              "kind": "setting",
+              "name": "Digital Lens",
+              "value": "Linear (Wide for arm’s-length)",
+              "why": "Linear removes the fisheye so your face isn’t distorted — the flattering choice for talking head. Wide is better when the camera is close on a short selfie grip and you want more in frame.",
+              "example": "At arm’s length on Linear, your face looks natural instead of bulged outward.",
+              "alt": "Wide or SuperView for an immersive POV vlog where the environment is the point."
+            },
+            {
+              "id": "vlog-3",
+              "kind": "setting",
+              "name": "HyperSmooth",
+              "value": "On",
+              "why": "Smooths your walking gait so the footage glides instead of bouncing — essential for handheld walk-and-talk, without AutoBoost’s heavier crop pulling you too tight.",
+              "example": "Walking and talking down a trail, On irons out your footsteps into a smooth glide.",
+              "alt": "AutoBoost if the terrain is rough and you can accept a tighter framing."
+            },
+            {
+              "id": "vlog-4",
+              "kind": "setting",
+              "name": "Audio",
+              "path": [
+                "Protune",
+                "Audio"
+              ],
+              "value": "Wind Auto (+ external mic)",
+              "why": "Clear voice is what makes a vlog watchable. Wind reduction tames gusts; for serious work add a Media Mod or a wireless mic so your voice cuts through wind and ambient noise.",
+              "example": "On a breezy boardwalk your voice stays clear because Wind reduction is filtering the gusts.",
+              "alt": "RAW Audio Med if you want to clean up or replace the audio in post."
+            },
+            {
+              "id": "vlog-5",
+              "kind": "setting",
+              "name": "Front Screen",
+              "path": [
+                "Dashboard",
+                "Front Screen"
+              ],
+              "value": "Live preview On",
+              "why": "The color front screen shows a live view of the lens so you can frame yourself accurately. Set it to the full live preview rather than the status-only view.",
+              "example": "You keep yourself centered and in focus the whole walk because the front screen shows exactly what the lens sees.",
+              "alt": "Status view to save battery when you’re not on-camera."
+            },
+            {
+              "id": "vlog-save",
+              "kind": "save",
+              "name": "Save as a custom preset: \"Vlog\"",
+              "value": "Settings → Save as Preset → name it Vlog",
+              "why": "One swipe to a flattering, steady, well-mic’d selfie setup — great as your Default Preset on a travel day."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tw",
+      "label": "09",
+      "title": "TimeWarp",
+      "subtitle": "Hyperlapse · journeys · time compression",
+      "icon": "timelapse",
+      "kind": "scenario",
+      "blurb": "TimeWarp is a moving time-lapse — walk, drive, or ride and it compresses the trip into smooth hyperlapse video.",
+      "scenario": {
+        "slot": "TimeWarp",
+        "storage": "preset",
+        "tagline": "Stabilized time-lapse video that turns a long journey into a flowing few seconds."
+      },
+      "groups": [
+        {
+          "id": "tw-grp",
+          "title": "TimeWarp preset",
+          "gate": {
+            "id": "tw-gate",
+            "headline": "Build the TimeWarp preset",
+            "detail": "Start from a preset close to this (or Create Preset from scratch), set the values below, then save it with a name at the end.",
+            "dials": [],
+            "saveTo": "TimeWarp"
+          },
+          "items": [
+            {
+              "id": "tw-1",
+              "kind": "setting",
+              "name": "Mode",
+              "path": [
+                "Time Lapse",
+                "TimeWarp"
+              ],
+              "value": "TimeWarp",
+              "why": "In Time Lapse mode, TimeWarp records stabilized hyperlapse video (not stills you assemble later). It’s the default Time Lapse preset and the one you want for moving shots.",
+              "example": "A hike to a summit becomes a smooth 20-second hyperlapse that glides up the trail.",
+              "alt": "Time Lapse (stills) or Night Lapse for static, tripod-mounted scenes."
+            },
+            {
+              "id": "tw-2",
+              "kind": "setting",
+              "name": "Resolution / Lens",
+              "value": "4K · Wide",
+              "why": "4K keeps the hyperlapse sharp and reframable; a Wide lens suits the sweeping, moving feel of TimeWarp.",
+              "example": "A 4K TimeWarp down a city street is sharp enough to punch in on the interesting bits.",
+              "alt": "5.3K for maximum detail; Linear to remove distortion on architectural moves."
+            },
+            {
+              "id": "tw-3",
+              "kind": "setting",
+              "name": "Speed",
+              "path": [
+                "Capture Settings",
+                "Speed"
+              ],
+              "value": "Auto",
+              "why": "Auto intelligently sets the time-compression based on motion and scene, so you don’t have to guess. You can also fix a speed (2× to 30×) for predictable results.",
+              "example": "Auto slows down when you stop to look around and speeds up on the straightaways, all on its own.",
+              "alt": "A fixed speed (e.g. 10×) when you want a consistent, predictable rate for a known-length journey.",
+              "isDefault": true
+            },
+            {
+              "id": "tw-4",
+              "kind": "setting",
+              "name": "Speed Ramp",
+              "path": [
+                "Capture Settings",
+                "Speed Ramp"
+              ],
+              "value": "Tap to drop to real speed",
+              "why": "During a TimeWarp, tapping the screen ramps down to real-time speed for a dramatic moment, then back up — a signature TimeWarp move.",
+              "example": "You reach the summit and tap once to drop into real-time for the reveal, then tap to speed back up for the descent.",
+              "alt": "Leave it untouched for a constant-rate hyperlapse."
+            },
+            {
+              "id": "tw-save",
+              "kind": "save",
+              "name": "Save as a custom preset: \"TimeWarp\"",
+              "value": "Settings → Save as Preset → name it TimeWarp",
+              "why": "Saves your hyperlapse recipe so capturing a journey is one swipe — just start it and move."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "night",
+      "label": "10",
+      "title": "Night & Stars",
+      "subtitle": "Star trails · light painting · night lapse",
+      "icon": "stars",
+      "kind": "scenario",
+      "blurb": "Night work is all about a long shutter and a rock-steady camera — mount it and let physics do the rest.",
+      "scenario": {
+        "slot": "Night",
+        "storage": "preset",
+        "tagline": "Long-exposure stills and time-lapses for the dark."
+      },
+      "groups": [
+        {
+          "id": "night-grp",
+          "title": "Night & Stars preset",
+          "gate": {
+            "id": "night-gate",
+            "headline": "Build the Night & Stars preset",
+            "detail": "Start from a preset close to this (or Create Preset from scratch), set the values below, then save it with a name at the end.",
+            "dials": [],
+            "saveTo": "Night"
+          },
+          "items": [
+            {
+              "id": "night-1",
+              "kind": "setting",
+              "name": "Mode",
+              "path": [
+                "Time Lapse",
+                "Star Trails / Night Lapse"
+              ],
+              "value": "Star Trails (or Night Lapse)",
+              "why": "Time Lapse mode holds the night presets: Star Trails uses the Earth’s rotation to draw glowing arcs; Light Painting captures trails of light; Night Lapse builds a time-lapse from long-exposure night frames.",
+              "example": "Pointed at the night sky for an hour, Star Trails renders the stars as sweeping circular arcs.",
+              "alt": "Night Photo (in Photo mode) for a single long-exposure still of the Milky Way."
+            },
+            {
+              "id": "night-2",
+              "kind": "setting",
+              "name": "Shutter",
+              "path": [
+                "Protune",
+                "Shutter"
+              ],
+              "value": "Long (10–30s)",
+              "why": "A long shutter gathers enough starlight to expose the dark. Night Photo can auto-set a long shutter; for manual control, longer = brighter and longer trails. The camera must be perfectly still.",
+              "example": "A 20-second exposure of a dark-sky campsite reveals the Milky Way the naked eye barely sees.",
+              "alt": "Shorter (10s) for pinpoint stars; very long for dramatic trails."
+            },
+            {
+              "id": "night-3",
+              "kind": "setting",
+              "name": "Night Lapse Interval",
+              "path": [
+                "Capture Settings",
+                "Interval"
+              ],
+              "value": "Auto (syncs to shutter)",
+              "why": "How often a Night Lapse takes a frame. Auto syncs the interval to your shutter (a 10s shutter → a shot every 10s). Longer intervals suit very slow scene changes.",
+              "example": "An overnight Night Lapse on Auto fires each frame as soon as the last long exposure finishes, with no awkward gaps.",
+              "alt": "A fixed longer interval for slow-changing scenes like drifting clouds.",
+              "isDefault": true
+            },
+            {
+              "id": "night-4",
+              "kind": "setting",
+              "name": "Stability & power",
+              "value": "Tripod + USB power",
+              "why": "Any movement ruins a long exposure, and night sequences run for ages — mount the camera solidly and feed it USB power for long Star Trails or overnight Night Lapses.",
+              "example": "A two-hour Star Trails sequence runs off a USB battery pack on a tripod without dying or shifting a pixel.",
+              "alt": "A fully charged Enduro battery for shorter, untethered night shots."
+            },
+            {
+              "id": "night-save",
+              "kind": "save",
+              "name": "Save as a custom preset: \"Night\"",
+              "value": "Settings → Save as Preset → name it Night",
+              "why": "Stores your night recipe so star trails and night lapses are one swipe — set it up before the light fades."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delivery",
+      "label": "11",
+      "title": "Offload & Edit",
+      "subtitle": "From card to finished clip",
+      "icon": "export",
+      "kind": "delivery",
+      "blurb": "The GoPro workflow lives half in the Quik app. Here’s how to get clips off the camera and make them shine.",
+      "blocks": [
+        {
+          "heading": "Offload",
+          "body": [
+            "Pull clips wirelessly into the GoPro Quik app, or pop the microSD into a fast USB reader for big 5.3K/10-bit files.",
+            "• Reformat the card in-camera after every offload + backup — it keeps the card fast and healthy.",
+            "• Keep two copies before you wipe anything."
+          ]
+        },
+        {
+          "heading": "Grade GP-Log with the GoPro LUT",
+          "body": [
+            "Footage shot in HLG HDR + Log looks flat and grey straight out of camera — that’s correct.",
+            "Apply GoPro’s GP-Log LUT in the Quik app or your editor (Premiere/Resolve/Final Cut) as a starting point, then adjust to taste. This is what unlocks the cinematic look from your Cine preset."
+          ]
+        },
+        {
+          "heading": "Reframe one shot into many",
+          "body": [
+            "Footage shot 8:7 (full sensor) — or any wide clip — can be reframed in the Quik app: pull a 16:9 horizontal for YouTube and a 9:16 vertical for Reels/TikTok from the same take.",
+            "Punch in on 5.3K footage for a tighter \"second angle\" without losing 1080 sharpness."
+          ]
+        },
+        {
+          "heading": "Find the best shots fast",
+          "body": [
+            "HiLight tags (the button on the camera, a voice command, or in the app) mark the moments that mattered while you shoot.",
+            "In Quik, those tags jump you straight to the keepers and even auto-build edits around them — so a long day of footage becomes a finished clip in minutes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cheatsheet",
+      "label": "12",
+      "title": "Preset Cheat Sheet",
+      "subtitle": "Your six presets at a glance",
+      "icon": "card-print",
+      "kind": "cheatsheet"
+    }
+  ]
+}

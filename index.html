@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/aperture.svg" type="image/svg+xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#08090b" />
+    <meta name="description" content="An interactive, guided setup co-pilot for the Sony A7 V (ILCE-7M5)." />
+    <title>A7 V Setup Co-Pilot</title>
+    <script>
+      // Apply the saved theme before paint to avoid a flash.
+      try {
+        var s = JSON.parse(localStorage.getItem('a7v-setup-v1') || '{}');
+        var id = (s.state && s.state.theme) || 'amber-dark';
+        id = { dark: 'amber-dark', light: 'amber-light' }[id] || id;
+        document.documentElement.dataset.theme = id;
+        document.documentElement.style.colorScheme = id.indexOf('light') > -1 ? 'light' : 'dark';
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

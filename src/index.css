@@ -1,0 +1,628 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   "Through the Viewfinder" — an EVF/instrument design system.
+   Tokens are "R G B" triplets so Tailwind's <alpha-value> works.
+   ============================================================ */
+/* ============================================================
+   THEMES. :root is "Obsidian" (amber-dark, default). Each theme carries
+   its own COLOURED void + panels + hairlines, not just an accent swap.
+   --amber is the single accent token; --on-accent is text drawn ON it.
+   ============================================================ */
+:root {
+  --void: 12 10 8;
+  --panel: 20 17 13;
+  --panel-2: 27 23 18;
+  --hair: 46 40 31;
+  --hair-2: 66 57 45;
+
+  --ink: 243 240 234;
+  --dim: 165 158 146;
+  --faint: 106 100 89;
+
+  --amber: 255 174 0; /* peaking amber */
+  --on-accent: 26 17 0;
+  --hud: 110 188 204;
+  --ok: 45 220 132;
+  --info: 96 165 250;
+  --alert: 255 96 71;
+
+  --grid-opacity: 0.42;
+  --grain-opacity: 0.05;
+}
+
+/* Forest — deep evergreen */
+html[data-theme='green-dark'] {
+  --void: 6 19 14;
+  --panel: 11 30 23;
+  --panel-2: 16 39 30;
+  --hair: 27 60 47;
+  --hair-2: 40 82 65;
+  --ink: 231 245 238;
+  --dim: 146 184 168;
+  --faint: 92 132 116;
+  --amber: 53 226 140;
+  --on-accent: 2 26 16;
+  --hud: 122 224 205;
+  --grid-opacity: 0.5;
+}
+
+/* Abyss — deep ocean */
+html[data-theme='cyan-dark'] {
+  --void: 5 17 28;
+  --panel: 10 29 44;
+  --panel-2: 14 38 56;
+  --hair: 25 58 82;
+  --hair-2: 38 80 108;
+  --ink: 228 240 249;
+  --dim: 142 172 194;
+  --faint: 88 122 146;
+  --amber: 56 189 248;
+  --on-accent: 0 22 36;
+  --hud: 130 214 252;
+  --grid-opacity: 0.5;
+}
+
+/* Blueprint — royal navy, grid-forward */
+html[data-theme='blueprint-dark'] {
+  --void: 8 22 52;
+  --panel: 12 33 72;
+  --panel-2: 16 42 90;
+  --hair: 32 62 120;
+  --hair-2: 48 84 152;
+  --ink: 224 235 252;
+  --dim: 150 174 214;
+  --faint: 98 124 172;
+  --amber: 120 196 255;
+  --on-accent: 4 18 44;
+  --hud: 168 214 255;
+  --grid-opacity: 0.92;
+  --grain-opacity: 0.03;
+}
+
+/* Nebula — deep aubergine */
+html[data-theme='violet-dark'] {
+  --void: 15 10 30;
+  --panel: 24 16 49;
+  --panel-2: 31 21 62;
+  --hair: 52 41 95;
+  --hair-2: 74 60 128;
+  --ink: 237 232 249;
+  --dim: 172 160 196;
+  --faint: 116 104 144;
+  --amber: 186 150 248;
+  --on-accent: 22 10 44;
+  --hud: 201 184 253;
+  --grid-opacity: 0.5;
+  --grain-opacity: 0.055;
+}
+
+/* Ember — wine / maroon */
+html[data-theme='rose-dark'] {
+  --void: 24 9 14;
+  --panel: 38 15 23;
+  --panel-2: 49 20 30;
+  --hair: 76 35 47;
+  --hair-2: 104 50 65;
+  --ink: 247 234 238;
+  --dim: 194 160 170;
+  --faint: 136 102 114;
+  --amber: 251 113 133;
+  --on-accent: 32 6 12;
+  --hud: 253 168 178;
+  --grid-opacity: 0.5;
+  --grain-opacity: 0.055;
+}
+
+/* ---- Light themes ---- */
+/* Daylight — warm cream */
+html[data-theme='amber-light'] {
+  --void: 236 230 219;
+  --panel: 245 240 230;
+  --panel-2: 252 249 242;
+  --hair: 214 206 190;
+  --hair-2: 190 180 162;
+  --ink: 38 31 22;
+  --dim: 110 99 84;
+  --faint: 152 141 124;
+  --amber: 176 104 0;
+  --on-accent: 255 250 242;
+  --hud: 22 116 134;
+  --ok: 21 140 88;
+  --info: 37 99 235;
+  --alert: 198 56 48;
+  --grid-opacity: 0.5;
+  --grain-opacity: 0.022;
+}
+
+/* Studio — cool paper, blue accent */
+html[data-theme='slate-light'] {
+  --void: 224 229 235;
+  --panel: 238 242 247;
+  --panel-2: 252 253 255;
+  --hair: 204 212 222;
+  --hair-2: 178 188 200;
+  --ink: 16 24 36;
+  --dim: 78 90 106;
+  --faint: 126 138 154;
+  --amber: 37 99 235;
+  --on-accent: 248 251 255;
+  --hud: 14 116 144;
+  --ok: 21 140 88;
+  --info: 37 99 235;
+  --alert: 209 56 56;
+  --grid-opacity: 0.6;
+  --grain-opacity: 0.02;
+}
+
+/* Graphite — neutral monochrome, cool silver accent */
+html[data-theme='mono-dark'] {
+  --void: 14 15 17;
+  --panel: 22 24 27;
+  --panel-2: 30 33 37;
+  --hair: 50 54 60;
+  --hair-2: 72 78 86;
+  --ink: 238 240 243;
+  --dim: 158 164 172;
+  --faint: 104 110 118;
+  --amber: 210 218 228;
+  --on-accent: 18 20 24;
+  --hud: 140 170 190;
+  --grid-opacity: 0.4;
+}
+
+/* Bullion — noir black, luxe gold */
+html[data-theme='gold-dark'] {
+  --void: 16 13 7;
+  --panel: 26 21 12;
+  --panel-2: 34 28 17;
+  --hair: 58 48 28;
+  --hair-2: 84 70 42;
+  --ink: 245 240 228;
+  --dim: 178 166 140;
+  --faint: 122 112 90;
+  --amber: 226 178 76;
+  --on-accent: 28 20 4;
+  --hud: 208 196 150;
+  --grid-opacity: 0.45;
+}
+
+/* Copper — dark espresso, burnished copper */
+html[data-theme='copper-dark'] {
+  --void: 18 12 9;
+  --panel: 28 19 14;
+  --panel-2: 37 26 19;
+  --hair: 62 44 32;
+  --hair-2: 90 64 46;
+  --ink: 244 236 228;
+  --dim: 182 162 146;
+  --faint: 126 108 94;
+  --amber: 226 134 84;
+  --on-accent: 28 14 6;
+  --hud: 214 176 140;
+  --grid-opacity: 0.45;
+}
+
+/* Inferno — charcoal, vivid red-orange */
+html[data-theme='crimson-dark'] {
+  --void: 18 12 11;
+  --panel: 28 19 18;
+  --panel-2: 37 25 23;
+  --hair: 62 40 37;
+  --hair-2: 90 58 53;
+  --ink: 246 236 234;
+  --dim: 184 158 154;
+  --faint: 128 106 102;
+  --amber: 255 94 58;
+  --on-accent: 30 6 2;
+  --hud: 250 170 110;
+  --grid-opacity: 0.5;
+}
+
+/* Dusk — plum-navy, coral + violet two-tone */
+html[data-theme='sunset-dark'] {
+  --void: 22 14 26;
+  --panel: 33 21 38;
+  --panel-2: 43 28 49;
+  --hair: 68 46 76;
+  --hair-2: 96 66 106;
+  --ink: 247 236 244;
+  --dim: 192 168 188;
+  --faint: 136 112 132;
+  --amber: 255 138 101;
+  --on-accent: 32 12 18;
+  --hud: 196 144 232;
+  --grid-opacity: 0.5;
+  --grain-opacity: 0.055;
+}
+
+/* Lagoon — deep teal, turquoise */
+html[data-theme='teal-dark'] {
+  --void: 4 22 24;
+  --panel: 8 34 37;
+  --panel-2: 12 44 48;
+  --hair: 22 66 70;
+  --hair-2: 34 92 98;
+  --ink: 226 244 244;
+  --dim: 140 180 182;
+  --faint: 88 126 128;
+  --amber: 45 224 206;
+  --on-accent: 0 26 24;
+  --hud: 120 230 200;
+  --grid-opacity: 0.5;
+}
+
+/* Synthwave — deep indigo, hot magenta + cyan */
+html[data-theme='synth-dark'] {
+  --void: 18 8 30;
+  --panel: 28 14 46;
+  --panel-2: 36 19 58;
+  --hair: 58 32 92;
+  --hair-2: 84 48 128;
+  --ink: 245 235 252;
+  --dim: 188 165 210;
+  --faint: 134 110 158;
+  --amber: 255 71 179;
+  --on-accent: 28 4 20;
+  --hud: 86 226 245;
+  --ok: 80 240 180;
+  --info: 120 150 255;
+  --alert: 255 90 120;
+  --grid-opacity: 0.55;
+  --grain-opacity: 0.05;
+}
+
+/* Darkroom — warm sepia paper, umber accent (light) */
+html[data-theme='sepia-light'] {
+  --void: 234 222 200;
+  --panel: 242 232 213;
+  --panel-2: 250 243 228;
+  --hair: 212 196 168;
+  --hair-2: 190 172 140;
+  --ink: 48 36 22;
+  --dim: 120 102 78;
+  --faint: 162 144 116;
+  --amber: 158 96 30;
+  --on-accent: 250 244 232;
+  --hud: 122 100 64;
+  --ok: 90 124 40;
+  --info: 80 110 150;
+  --alert: 176 64 40;
+  --grid-opacity: 0.5;
+  --grain-opacity: 0.03;
+}
+
+/* Sakura — pink cream paper, cherry rose (light) */
+html[data-theme='rose-light'] {
+  --void: 244 230 234;
+  --panel: 250 238 241;
+  --panel-2: 255 247 249;
+  --hair: 226 200 208;
+  --hair-2: 206 176 186;
+  --ink: 46 26 33;
+  --dim: 122 92 102;
+  --faint: 166 134 144;
+  --amber: 197 58 96;
+  --on-accent: 255 245 248;
+  --hud: 150 90 150;
+  --ok: 21 140 88;
+  --info: 37 99 235;
+  --alert: 198 56 48;
+  --grid-opacity: 0.55;
+  --grain-opacity: 0.022;
+}
+
+/* Meadow — pale mint paper, green (light) */
+html[data-theme='green-light'] {
+  --void: 228 238 228;
+  --panel: 238 246 238;
+  --panel-2: 248 252 248;
+  --hair: 204 222 204;
+  --hair-2: 180 204 180;
+  --ink: 22 36 26;
+  --dim: 84 110 90;
+  --faint: 128 156 132;
+  --amber: 22 140 78;
+  --on-accent: 244 252 246;
+  --hud: 24 120 110;
+  --ok: 21 140 88;
+  --info: 37 99 235;
+  --alert: 198 56 48;
+  --grid-opacity: 0.55;
+  --grain-opacity: 0.022;
+}
+
+/* Sky — pale blue paper, sky blue (light) */
+html[data-theme='sky-light'] {
+  --void: 224 233 242;
+  --panel: 236 243 250;
+  --panel-2: 248 251 255;
+  --hair: 202 216 232;
+  --hair-2: 176 196 218;
+  --ink: 18 30 44;
+  --dim: 78 98 120;
+  --faint: 124 146 168;
+  --amber: 14 124 200;
+  --on-accent: 246 251 255;
+  --hud: 20 150 168;
+  --ok: 21 140 88;
+  --info: 37 99 235;
+  --alert: 198 56 48;
+  --grid-opacity: 0.6;
+  --grain-opacity: 0.02;
+}
+
+/* Lavender — pale lavender paper, violet (light) */
+html[data-theme='violet-light'] {
+  --void: 234 230 244;
+  --panel: 242 239 250;
+  --panel-2: 250 248 255;
+  --hair: 216 208 234;
+  --hair-2: 194 184 216;
+  --ink: 32 24 48;
+  --dim: 100 90 122;
+  --faint: 146 134 168;
+  --amber: 124 76 210;
+  --on-accent: 248 246 255;
+  --hud: 156 100 188;
+  --ok: 21 140 88;
+  --info: 37 99 235;
+  --alert: 198 56 48;
+  --grid-opacity: 0.55;
+  --grain-opacity: 0.02;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--void));
+  color: rgb(var(--ink));
+  font-family: 'Inter Tight', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+.safe-bottom { padding-bottom: max(0px, env(safe-area-inset-bottom)); }
+.safe-top { padding-top: max(0px, env(safe-area-inset-top)); }
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--hair-2));
+  border-radius: 99px;
+  border: 2px solid rgb(var(--void));
+}
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--faint)); }
+
+::selection {
+  background: rgb(var(--amber) / 0.28);
+  color: rgb(var(--ink));
+}
+
+:focus-visible {
+  outline: 1.5px solid rgb(var(--amber));
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ============================================================
+   Type helpers
+   ============================================================ */
+.font-display { font-family: 'Archivo', sans-serif; }
+.display {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.data { font-family: 'IBM Plex Mono', monospace; font-feature-settings: 'zero' 1; }
+
+/* ============================================================
+   Components
+   ============================================================ */
+@layer components {
+  /* A flat instrument panel — hairline, near-black, minimal radius. */
+  .panel {
+    background: rgb(var(--panel) / 0.72);
+    border: 1px solid rgb(var(--hair) / 0.9);
+    border-radius: 10px;
+  }
+  .glass {
+    background: rgb(var(--panel) / 0.6);
+    backdrop-filter: blur(14px) saturate(1.1);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    border: 1px solid rgb(var(--hair) / 0.8);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-wider;
+  }
+
+  /* Menu path crumb */
+  .crumb {
+    @apply rounded px-1.5 py-0.5 font-mono text-[11px] leading-none;
+    background: rgb(var(--panel-2));
+    border: 1px solid rgb(var(--hair) / 0.7);
+    color: rgb(var(--dim));
+  }
+
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-all duration-200 active:scale-[0.98];
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .btn-accent {
+    background: rgb(var(--amber));
+    color: rgb(var(--on-accent));
+    box-shadow: 0 0 22px -6px rgb(var(--amber) / 0.6);
+  }
+  .btn-accent:hover { filter: brightness(1.07); box-shadow: 0 0 30px -4px rgb(var(--amber) / 0.7); }
+  .btn-ghost {
+    background: transparent;
+    color: rgb(var(--ink));
+    border: 1px solid rgb(var(--hair-2));
+  }
+  .btn-ghost:hover { border-color: rgb(var(--faint)); background: rgb(var(--panel-2) / 0.6); }
+
+  /* The recommended-value readout — mono, amber, instrument. */
+  .readout {
+    font-family: 'IBM Plex Mono', monospace;
+    color: rgb(var(--amber));
+    background: rgb(var(--amber) / 0.08);
+    border: 1px solid rgb(var(--amber) / 0.32);
+    border-radius: 5px;
+  }
+}
+
+/* ============================================================
+   Viewfinder background — rule-of-thirds grid + grain + vignette
+   ============================================================ */
+.evf-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: var(--grid-opacity);
+  background-image:
+    linear-gradient(rgb(var(--hair) / 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--hair) / 0.5) 1px, transparent 1px);
+  background-size: 33.333% 33.333%, 33.333% 33.333%;
+  background-position: center;
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 30%, #000 35%, transparent 78%);
+  mask-image: radial-gradient(120% 100% at 50% 30%, #000 35%, transparent 78%);
+}
+
+.evf-glow {
+  position: fixed;
+  inset: -25%;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 50% at 16% 8%, rgb(var(--amber) / 0.12), transparent 60%),
+    radial-gradient(42% 52% at 88% 18%, rgb(var(--hud) / 0.10), transparent 62%),
+    radial-gradient(36% 44% at 62% 96%, rgb(var(--amber) / 0.06), transparent 64%);
+  filter: blur(22px);
+  animation: glowDrift 26s ease-in-out infinite alternate;
+}
+
+@keyframes glowDrift {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
+  50% { transform: translate3d(1.5%, -2%, 0) scale(1.06); opacity: 1; }
+  100% { transform: translate3d(-1.5%, 1.5%, 0) scale(1.03); opacity: 0.9; }
+}
+
+/* A breathing amber ring + glow that clearly marks the active "next" setting. */
+@keyframes guideBreath {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgb(var(--amber) / 0.28), 0 6px 18px -10px rgb(var(--amber) / 0.22);
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgb(var(--amber) / 0.85), 0 14px 38px -8px rgb(var(--amber) / 0.75);
+  }
+}
+.guide-active { animation: guideBreath 2.8s ease-in-out infinite; }
+
+/* A soft amber light that travels down the active setting's left rail. */
+@keyframes guideScan {
+  0% { transform: translateY(-120%); opacity: 0; }
+  15%, 85% { opacity: 1; }
+  100% { transform: translateY(320%); opacity: 0; }
+}
+.guide-scan { animation: guideScan 2.6s ease-in-out infinite; }
+
+/* Mini-dial HUD: a soft amber haze that breathes inside the pill (dials stay still). */
+@keyframes pillHaze {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.12); }
+}
+.pill-haze { animation: pillHaze 3.4s ease-in-out infinite; }
+
+/* The dial-align gate panel breathes its amber glow so it reads as "live, do this". */
+@keyframes gateBreathe {
+  0%, 100% { box-shadow: 0 0 34px -26px rgb(var(--amber) / 0.5); }
+  50% { box-shadow: 0 0 64px -16px rgb(var(--amber) / 0.9); }
+}
+.gate-breathe { animation: gateBreathe 3.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-active {
+    animation: none;
+    box-shadow: 0 0 0 1.5px rgb(var(--amber) / 0.6), 0 8px 26px -12px rgb(var(--amber) / 0.4);
+  }
+  .pill-haze { animation: none; opacity: 0.5; }
+  .gate-breathe { animation: none; box-shadow: 0 0 40px -24px rgb(var(--amber) / 0.6); }
+}
+
+/* The in-app motion-stop toggle: kill every CSS animation + transition.
+   (Framer-motion animations are gated separately in JS via useReducedMotion.) */
+html[data-reduce-motion='on'] *,
+html[data-reduce-motion='on'] *::before,
+html[data-reduce-motion='on'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+html[data-reduce-motion='on'] .guide-active {
+  box-shadow: 0 0 0 1.5px rgb(var(--amber) / 0.6), 0 8px 26px -12px rgb(var(--amber) / 0.4);
+}
+html[data-reduce-motion='on'] .pill-haze { opacity: 0.5; }
+html[data-reduce-motion='on'] .gate-breathe { box-shadow: 0 0 40px -24px rgb(var(--amber) / 0.6); }
+
+.grain-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(125% 90% at 50% 0%, transparent 55%, rgb(var(--void) / 0.85) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.06s !important;
+  }
+}
+
+/* ============================================================
+   Print — cheat sheet export
+   ============================================================ */
+@media print {
+  .no-print { display: none !important; }
+  .evf-grid, .grain-bg, .vignette, .evf-glow { display: none !important; }
+  body { background: #fff; color: #000; }
+  .print-area, .print-area * { color: #000 !important; }
+  .panel, .glass {
+    background: #fff !important;
+    border: 1px solid #bbb !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+}

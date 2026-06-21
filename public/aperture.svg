@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <clipPath id="iris">
+      <circle cx="32" cy="32" r="26.8" />
+    </clipPath>
+    <radialGradient id="bloom" cx="50%" cy="44%" r="60%">
+      <stop offset="0%" stop-color="#ffae00" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#ffae00" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- app tile -->
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="#0B0D10" stroke="#20242B" />
+  <circle cx="32" cy="32" r="22" fill="url(#bloom)" />
+
+  <!-- iris pinwheel: hexagon opening edges extended to the rim -->
+  <g clip-path="url(#iris)" stroke="#FFAE00" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="43.00" y1="32.00" x2="27.62" y2="58.64" />
+    <line x1="37.50" y1="41.53" x2="6.74" y2="41.53" />
+    <line x1="26.50" y1="41.53" x2="11.12" y2="14.88" />
+    <line x1="21.00" y1="32.00" x2="36.38" y2="5.36" />
+    <line x1="26.50" y1="22.47" x2="57.26" y2="22.47" />
+    <line x1="37.50" y1="22.47" x2="52.88" y2="49.12" />
+  </g>
+
+  <!-- rim -->
+  <circle cx="32" cy="32" r="26.8" stroke="#FFAE00" stroke-width="2.3" />
+</svg>
