@@ -1,4 +1,4 @@
-# Dialed In
+# Setup My Camera
 
 An interactive, guided **camera setup co-pilot**. It turns a long, intimidating settings manual
 into a step-by-step, checklist-driven experience you follow while physically holding the camera —
